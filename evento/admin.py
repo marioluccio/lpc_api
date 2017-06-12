@@ -1,5 +1,5 @@
 from django.contrib import admin
-from evento.models import Evento, EventoCientifico, Pessoa, PessoaFisica, PessoaJuridica, Autor, ArtigoCientifico, Inscricoes, TipoInscricao, ArtigoAutor
+from evento.models import *
 
 
 admin.site.register(Evento)

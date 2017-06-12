@@ -57,32 +57,6 @@ def pessoaid(request, id):
     p = Pessoa.objects.get(pk=id)
     return HttpResponse("<h2> Informações Pessoa #" + str(p.id) + "</h2>" + "<strong>Nome:</strong> " + str(p.nome)  + "<br>" + "<strong>Email:</strong> " + str(p.email))
     
-def listaPessoasFisicas(request):
-    html = "<h1>Lista de Pessoas Físicas</h1>"
-    listaPessoaFisica = PessoaFisica.objects.all()
-    for pessoaF in listaPessoaFisica:
-        html += '<li><strong>{}</strong></li>'.format(pessoaF.nome)
-        html += '<ul><li>Email: {}</li>'.format(pessoaF.email)
-        html += '<li>CPF: {}</li></ul>'.format(pessoaF.cpf)
-    return HttpResponse(html)
-
-def pessoaFisicaid(request, id):
-    pFisica= PessoaFisica.objects.get(pk=id)
-    return HttpResponse("<h2> Informações Pessoa Física #" + str(pFisica.id) + "</h2>" + "<strong>Nome:</strong> " + str(pFisica.nome)  + "<br>" + "<strong>Email:</strong> " + str(pFisica.email)  + "<br>" + "<strong>CPF:</strong> " + str(pFisica.cpf))
-
-def listaPessoasJuridicas(request):
-    html = "<h1>Lista de Pessoas Jurídicas</h1>"
-    listaPessoaJuridica = PessoaJuridica.objects.all()
-    for pessoaJ in listaPessoaJuridica:
-        html += '<li><strong>{}</strong></li>'.format(pessoaJ.nome)
-        html += '<ul><li>Email: {}</li>'.format(pessoaJ.email)
-        html += '<li>CNPJ: {}</li></ul>'.format(pessoaJ.cnpj)
-    return HttpResponse(html)
-
-def pessoaJuridicaid(request, id):
-    pJuridica= PessoaJuridica.objects.get(pk=id)
-    return HttpResponse("<h2> Informações Pessoa Jurídica #" + str(pJuridica.id) + "</h2>" + "<strong>Nome:</strong> " + str(pJuridica.nome)  + "<br>" + "<strong>Email:</strong> " + str(pJuridica.email)  + "<br>" + "<strong>CNPJ:</strong> " + str(pJuridica.cnpj) + "<br>" + "<strong>Razão Social:</strong> " + str(pJuridica.razaoSocial))
-
 def listaAutores(request):
     html = "<h1>Lista de Autores</h1>"
     listaAutor = Autor.objects.all()
